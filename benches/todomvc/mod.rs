@@ -4,7 +4,7 @@ use test::Bencher;
 mod leptos;
 mod sycamore;
 mod tera;
-//mod yew;
+mod dioxus;
 
 #[bench]
 fn leptos_todomvc_ssr(b: &mut Bencher) {

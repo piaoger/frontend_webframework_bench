@@ -8,9 +8,6 @@ edition = "2021"
 leptos = { version = "0.2", default-features = false, features = ["ssr"] }
 sycamore = { version = "0.8", features = ["ssr"] }
 
-#sycamore = { git="https://codeup.aliyun.com/6195c9552f595dbd1b9ad599/mirrors/github.com/sycamore-rs/sycamore.git", features = ["ssr"] }
-
-
 tokio-test = "0.4"
 miniserde = "0.1"
 gloo = "0.8"
