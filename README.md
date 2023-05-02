@@ -1,33 +1,49 @@
-## frontend webframework benchmark
+## frontend webframework benchmarks
 
 - leptos
 - sycamore
 - dioxus
 
+### how to run
+
+```bash
+rustup default nightly
+cargo bench
+```
+
 ### benchmarks
 
+- reactive
+
+```text
+test leptos_deep_creation                 ... bench:     110,208 ns/iter (+/- 21,354)
+test leptos_deep_update                   ... bench:     407,354 ns/iter (+/- 103,459)
+test leptos_fanning_out                   ... bench:     312,223 ns/iter (+/- 91,099)
+test leptos_narrowing_down                ... bench:     204,127 ns/iter (+/- 22,674)
+test leptos_narrowing_update              ... bench:     388,814 ns/iter (+/- 72,225)
+test leptos_scope_creation_and_disposal   ... bench:     749,741 ns/iter (+/- 204,108)
+test sycamore_deep_creation               ... bench:     285,691 ns/iter (+/- 50,319)
+test sycamore_deep_update                 ... bench:     474,640 ns/iter (+/- 94,487)
+test sycamore_fanning_out                 ... bench:     367,515 ns/iter (+/- 30,286)
+test sycamore_narrowing_down              ... bench:     181,668 ns/iter (+/- 25,259)
+test sycamore_narrowing_update            ... bench:     677,473 ns/iter (+/- 273,928)
+test sycamore_scope_creation_and_disposal ... bench:     944,086 ns/iter (+/- 192,100)
 ```
-test leptos_deep_creation                 ... bench:      80,455 ns/iter (+/- 28,291)
-test leptos_deep_update                   ... bench:     395,647 ns/iter (+/- 88,409)
-test leptos_fanning_out                   ... bench:     306,930 ns/iter (+/- 89,803)
-test leptos_narrowing_down                ... bench:     202,961 ns/iter (+/- 31,444)
-test leptos_narrowing_update              ... bench:     377,887 ns/iter (+/- 38,595)
-test leptos_scope_creation_and_disposal   ... bench:     742,635 ns/iter (+/- 110,906)
-test sycamore_deep_creation               ... bench:     278,049 ns/iter (+/- 20,804)
-test sycamore_deep_update                 ... bench:     419,636 ns/iter (+/- 35,927)
-test sycamore_fanning_out                 ... bench:     363,235 ns/iter (+/- 41,510)
-test sycamore_narrowing_down              ... bench:     178,360 ns/iter (+/- 12,399)
-test sycamore_narrowing_update            ... bench:     379,326 ns/iter (+/- 31,982)
-test sycamore_scope_creation_and_disposal ... bench:     588,955 ns/iter (+/- 64,872)
+- ssr
+
+```text
+test leptos_ssr_bench   ... bench:      13,994 ns/iter (+/- 3,748)
+test sycamore_ssr_bench ... bench:      25,665 ns/iter (+/- 12,194)
+test tera_ssr_bench     ... bench:       2,449 ns/iter (+/- 1,115)
 ```
 
-```
-test todomvc::leptos_todomvc_ssr             ... bench:       5,865 ns/iter (+/- 691)
-test todomvc::leptos_todomvc_ssr_with_1000   ... bench:  23,014,535 ns/iter (+/- 3,427,326)
-test todomvc::sycamore_todomvc_ssr           ... bench:      28,324 ns/iter (+/- 2,315)
-test todomvc::sycamore_todomvc_ssr_with_1000 ... bench:  10,510,095 ns/iter (+/- 834,420)
-test todomvc::tera::tera_todomvc             ... bench:       1,050 ns/iter (+/- 93)
-test todomvc::tera::tera_todomvc_1000        ... bench:   1,249,643 ns/iter (+/- 71,902)
-```
+- todomvc
 
-
+```text
+test todomvc::leptos_todomvc_ssr             ... bench:      12,843 ns/iter (+/- 5,691)
+test todomvc::leptos_todomvc_ssr_with_1000   ... bench:  43,702,345 ns/iter (+/- 8,142,173)
+test todomvc::sycamore_todomvc_ssr           ... bench:      52,757 ns/iter (+/- 20,625)
+test todomvc::sycamore_todomvc_ssr_with_1000 ... bench:  38,442,436 ns/iter (+/- 18,403,507)
+test todomvc::tera::tera_todomvc             ... bench:       2,205 ns/iter (+/- 999)
+test todomvc::tera::tera_todomvc_1000        ... bench:   2,748,351 ns/iter (+/- 1,567,873)
+```
