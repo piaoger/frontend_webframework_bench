@@ -40,21 +40,6 @@ fn sycamore_todomvc_ssr(b: &mut Bencher) {
     });
 }
 
-// #[bench]
-// fn yew_todomvc_ssr(b: &mut Bencher) {
-//     use self::yew::*;
-//     use ::yew::prelude::*;
-//     use ::yew::ServerRenderer;
-
-//     b.iter(|| {
-//         tokio_test::block_on(async {
-//             let renderer = ServerRenderer::<App>::new();
-//             let rendered = renderer.render().await;
-//             assert!(rendered.len() > 1);
-//         });
-//     });
-// }
-
 #[bench]
 fn leptos_todomvc_ssr_with_1000(b: &mut Bencher) {
     b.iter(|| {
@@ -90,18 +75,3 @@ fn sycamore_todomvc_ssr_with_1000(b: &mut Bencher) {
         });
     });
 }
-
-// #[bench]
-// fn yew_todomvc_ssr_with_1000(b: &mut Bencher) {
-//     use self::yew::*;
-//     use ::yew::prelude::*;
-//     use ::yew::ServerRenderer;
-
-//     b.iter(|| {
-//         tokio_test::block_on(async {
-//             let renderer = ServerRenderer::<AppWith1000>::new();
-//             let rendered = renderer.render().await;
-//             assert!(rendered.len() > 1);
-//         });
-//     });
-// }
