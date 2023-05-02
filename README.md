@@ -1,5 +1,11 @@
 ## frontend webframework benchmark
 
+- leptos
+- sycamore
+- dioxus
+
+### benchmarks
+
 ```
 test leptos_deep_creation                 ... bench:      80,455 ns/iter (+/- 28,291)
 test leptos_deep_update                   ... bench:     395,647 ns/iter (+/- 88,409)
